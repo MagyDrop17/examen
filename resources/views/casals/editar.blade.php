@@ -1,6 +1,8 @@
 @extends('casals.main_master')
 @section('content')
 
+    <h1>Editant</h1>
+
     <form method="POST" action="{{ route('edited') }}" class="d-flex flex-column justify-content-left align-items-left w-75">
         @csrf
 
