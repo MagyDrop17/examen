@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CasalController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CasalController::class, 'index'])->name('index');
+Route::get('/afegir', [CasalController::class, 'afegir'])->name('afegir');
+Route::post('/store', [CasalController::class, 'store'])->name('store');
+Route::get('/editar/{id}', [CasalController::class, 'show'])->name('editar');
+Route::post('/edited', [CasalController::class, 'edited'])->name('edited');
+Route::get('/eliminar/{id}', [CasalController::class, 'destroy'])->name('eliminar');

@@ -13,7 +13,7 @@ class Casal extends Model
 
     public function ciutat()
     {
-        return $this->belongsTo(Ciutat::class);
+        return $this->belongsTo(Ciutat::class, 'id_ciutat');
     }
 
 }
